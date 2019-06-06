@@ -2,6 +2,25 @@
 ~makeEvents = {
 	e = Dictionary.new;
 
+	e.add(\openingbirds -> {
+		~openingBirds = Pbind(
+			\instrument, \bufnoise,
+			\dur, Pxrand([Pwhite(5, 8), Pwhite(4, 7), Pwhite(3, 6), Pwhite(2, 5), Pwhite(1, 4), Pwhite(0.5, 3.5), Pwhite(0.25, 3.25), Pwhite(0.125, 3.125)], 10),
+			\atk, Pseq([0.005, 0.005, 0.05, 0.07, 0.2, 0.09, 0.15, 0.7, 1.5, 1 ]),
+			\sus, Pwhite(0.05, 1),
+			\rel, Pwhite(0.05, 1),
+			\buf, Pseq([b[\birds][0].bufnum, b[\birds][1].bufnum, b[\birds][2].bufnum, b[\birds][3].bufnum, b[\birds][4].bufnum, b[\birds][5].bufnum, b[\birds][6].bufnum, b[\birds][7].bufnum, b[\birds][8].bufnum, b[\birds][9].bufnum, b[\birds][10].bufnum,]),
+			\rate, Pwhite(-7.0,-4.0).midiratio,
+			\spos, Pseq([]),
+			\amp, Pexprand(0.17,0.25),
+			\freq, Pseq([200, 1, 50, 20, 30, 25]),
+			\start, Pseq([]),
+			\end, Pseq([]),
+			\group, ~mainGrp,
+			\out, ~bus[\reverb],
+		).play;
+	});
+
 	e.add(\event1 -> {
 		~birdsSustain = Pbind(
 			\instrument, \bpfbuf,

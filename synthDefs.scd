@@ -33,6 +33,18 @@ SynthDef(\bpfbuf, {
 	Out.ar(out, sig);
 }).add;
 
+SynthDef(\bufnoise, {
+	arg amp=1, out=0, buf, start=0, end,
+	freq=1, atk=0, sus=0, rel=3, c1=1, c2=(-1);
+	var sig, ptr, env;
+	env = EnvGen.kr(Env([0,1,1,0],[atk,sus,rel],[c1,0,c2]),doneAction:2);
+	ptr = LFNoise1.ar(freq).range(start, end);
+	sig = BufRd.ar(1, buf, ptr);
+	sig = sig * env;
+	sig = sig * amp;
+	Out.ar(out, sig);
+}).add;
+
 SynthDef(\reverb, {
 	arg in, predelay=0.1, revtime=1.8,
 	lpf=4500, mix=0.15, amp=1, out=0;
