@@ -1,0 +1,59 @@
+Intro - subtle, percussion-window grains of normal harmonic spectrum with subtle grains of birds. [1 min]
+
+A1 - Birds are fairly forward and clear / more prominent spectrum grains (base 10) [1 min]
+A2 - Spectrum begins to quietly arpeggiate as birds in buffers are mangled [1 min]
+
+B - Birds become grains (similar to mangling) / Spectrum is louder, scaled, and not a pure arpeggio (Base 11) [1 min]
+
+C - Birds are highly granular / Louder, scaled, impure spectrum arpeggio (base 12) [1 min]
+
+D - Sine tone grains matching chord tones / Louder, scaled, impure spectrum arpeggio (base 13) [1 min]
+
+E - Sine tone grains matching chord tones / Louder, scaled, impure spectrum arpeggio (base 14) [1 min]
+
+F - Sine tone grains matching chord tones / Louder, scaled, impure spectrum arpeggio (base 15) [1 min]
+
+G - Sine tone grains matching chord tones / Louder, scaled, impure spectrum arpeggio (base 16) [1 min]
+
+H - Sine tone grains matching chord tones / Louder, scaled, impure spectrum drones (no longer an arpeggio) (base 17) [1 min]
+
+I - Sine tone grains matching chord tones / Louder, scaled, impure spectrum drones (base 18) [1 min]
+
+J - Fire / Louder, scaled, impure spectrum drones (base 19) [1 min]
+
+K - Fire grains / Louder, scaled, impure spectrum drones (base 20) [1 min]
+
+L - Lightbulb grains [1 min]
+
+M1 - Percussion-window grains with reverb (bell-like) scaled chromatic collection (base 20) [1 min]
+M2 - Spectrum (base 20) [1 min]
+
+N1 - Percussion-window grains with reverb (bell-like) scaled chromatic collection (base 19) [1 min]
+N2 - Spectrum (base 19) [1 min]
+
+O1 - Percussion-window grains with reverb (bell-like) scaled chromatic collection (base 18) [1 min]
+O2 - Spectrum (base 18) [1 min]
+
+P1 - Percussion-window grains with reverb (bell-like) scaled chromatic collection (base 17) [1 min]
+P2 - Spectrum (base 17) [1 min]
+
+Q1 - Percussion-window grains with reverb (bell-like) scaled chromatic collection (base 16) [1 min]
+Q2 - Spectrum (base 16) [1 min]
+
+R1 - Percussion-window grains with reverb (bell-like) scaled chromatic collection (base 15) [1 min]
+R2 - Spectrum (base 15) [1 min]
+
+S1 - Percussion-window grains with reverb (bell-like) scaled chromatic collection (base 14) [1 min]
+S2 - Spectrum (base 14) [1 min]
+
+T1 - Percussion-window grains with reverb (bell-like) scaled chromatic collection (base 13) [1 min]
+T2 - Spectrum (base 13) [1 min]
+
+U1 - Percussion-window grains with reverb (bell-like) scaled chromatic collection (base 12) [1 min]
+U2 - Spectrum (base 12) [1 min]
+
+V1 - Percussion-window grains with reverb (bell-like) scaled chromatic collection (base 11) [1 min]
+V2 - Spectrum (base 11) [1 min]
+
+W1 - Percussion-window grains with reverb (bell-like) scaled chromatic collection (base 10) [1 min]
+W2 - Spectrum (base 10) [1 min]
