@@ -1,16 +1,17 @@
 (
 ~startScore = Routine({
-	"serverConfig.scd".loadRelative;
+	"definitions/serverConfig.scd".loadRelative;
 
 	"initializeVariables.scd".loadRelative;
 
-	"defineFunctions.scd".loadRelative;
+	"definitions/defineFunctions.scd".loadRelative;
 
-	"registerFunctions.scd".loadRelative;
+	"definitions/registerFunctions.scd".loadRelative;
 
-	"bootServer.scd".loadRelative;
+	"definitions/bootServer.scd".loadRelative;
 
 	}).play(AppClock);
 )
+// for testing or emergency only
 s.quit;
 s.plotTree;
