@@ -76,7 +76,7 @@
 		).play;
 	});*/
 
-	/*e.add(\event2 -> {
+/*e.add(\event2 -> {
 		Routine({
 			~birdsCloud = Pbind(
 				\instrument, \bpfbuf,
@@ -199,7 +199,7 @@
 	e.add(\event5 -> {
 		~marimba.stop;
 		~chords.stop;
-	});
+	});*/
 
 	e.add(\oneshot1 -> {
 		12.do{
@@ -273,6 +273,6 @@
 				~mainGrp
 			);
 		};
-	});*/
+	});
 };
 )
