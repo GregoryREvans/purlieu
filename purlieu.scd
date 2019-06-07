@@ -13,3 +13,4 @@
 	}).play(AppClock);
 )
 s.quit;
+s.plotTree;
