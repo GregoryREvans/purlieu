@@ -71,7 +71,8 @@ SynthDef.new(\fm, {
 
 SynthDef(\bufgrains, {
 	arg trigger = 0, graindur = 0.2, sndbuf,
-	transp = 1, pos = 0, pan = 0, envbuf = -1, amp = 1, atk=1, rel=1;
+	transp = 1, pos = 0, pan = 0, envbuf = -1,
+	amp = 1, atk=1, rel=1, out=0;
 	var env, snd;
 	env = EnvGen.kr(Env([0,1,0],[atk,rel],[1,(-1)]),doneAction:2);
 	snd = GrainBuf.ar(
@@ -85,7 +86,7 @@ SynthDef(\bufgrains, {
 		envbufnum: envbuf);
 	snd = snd * env;
 	snd = snd * amp;
-	Out.ar(0, snd);
+	Out.ar(out, snd);
 }).add;
 
 SynthDef(\reverb, {

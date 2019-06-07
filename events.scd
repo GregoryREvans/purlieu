@@ -22,19 +22,20 @@
 			).play;
 		}
 	});
+
 	e.add(\openinggrains -> {
 		1.do{
 			~openingGrains = Pbind(
 				\instrument, \bufgrains,
-				\trigger, Pxrand((1..3), 8),
+				\trigger, Pxrand((30..40), 8).trace,
 				\graindur, Pxrand((0.5..1), 8),
 				\atk, Pwhite(0.5, 1.5),
 				\rel, Pwhite(0.5, 2.5),
 				\sndbuf, Pseq([b[\birds][8].bufnum, b[\birds][9].bufnum, b[\birds][10].bufnum, b[\birds][11].bufnum, ], inf),
 				\transp, Pwhite(0.1, 1.2),
-				\pos, Pseq([40000, 15000, 50692, 20714.3, ], inf),
-				\pan, 0,
-				\amp, Pbrown(0.65, 1, 0.05).trace,
+				\pos, Pseq([41000, 16000, 50692, 20714.3, ], inf),
+				\pan, Pwhite(-1, 1),
+				\amp, Pbrown(0.65, 1, 0.05),
 				\envbuf, -1,
 				\dur, Pseq([7.5, 6.4, 4.2, 3.1, 5.3, 0.3, 2.5, 1.4], 1),
 				\out, ~bus[\growingReverb],
