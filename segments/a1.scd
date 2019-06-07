@@ -1,4 +1,5 @@
 (
+postln("A 1");
 e[\birdnoise].play;
 45.wait;
 e[\basetendrones].play;

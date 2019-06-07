@@ -2,6 +2,9 @@
 "/Users/evansdsg2/supercollider_scores/purlieu/segments/intro.scd".load;
 3.wait;
 "/Users/evansdsg2/supercollider_scores/purlieu/segments/a1.scd".load;
-70.wait;
+50.wait;
+"/Users/evansdsg2/supercollider_scores/purlieu/segments/a2.scd".load;
+95.wait;
+postln("Done");
 s.quit;
 )

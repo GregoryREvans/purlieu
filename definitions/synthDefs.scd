@@ -47,13 +47,13 @@ SynthDef(\bufnoise, {
 
 SynthDef.new(\sine,
 	{
-		arg freq=440, atk=0.005, rel=0.3, amp=1, pan=0;
+		arg freq=440, atk=0.005, rel=0.3, amp=1, pan=0, out=0;
 		var sig, env;
 		sig = SinOsc.ar(freq);
 		env = EnvGen.kr(Env.new([0, 1, 0], [atk, rel], [1, -1]), doneAction:2);
 		sig = Pan2.ar(sig, pan, amp);
 		sig = sig * env;
-		Out.ar(0, sig);
+		Out.ar(out, sig);
 	}
 ).add;
 

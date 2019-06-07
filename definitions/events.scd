@@ -27,8 +27,8 @@
 		1.do{
 			~openingGrains = Pbind(
 				\instrument, \bufgrains,
-				\trigger, Pxrand((30..40), 8).trace,
-				\graindur, Pxrand((0.5..1), 8),
+				\trigger, Pseq(Array.series(9, 4, 5), 1),
+				\graindur, Pxrand((0.5..1), 9),
 				\atk, Pwhite(0.5, 1.5),
 				\rel, Pwhite(0.5, 2.5),
 				\sndbuf, Pseq([b[\birds][8].bufnum, b[\birds][9].bufnum, b[\birds][10].bufnum, b[\birds][11].bufnum, ], inf),
@@ -37,7 +37,7 @@
 				\pan, Pwhite(-1, 1),
 				\amp, Pbrown(0.65, 1, 0.05),
 				\envbuf, -1,
-				\dur, Pseq([7.5, 6.4, 4.2, 3.1, 5.3, 0.3, 2.5, 1.4], 1),
+				\dur, Pseq([7.5, 6.4, 4.2, 3.1, 5.3, 0.3, 2.5, 1.4, 0.5], 1),
 				\out, ~bus[\growingReverb],
 				\group, ~mainGrp,
 			).play;
@@ -61,59 +61,22 @@
 		}
 	});
 
-	e.add(\event1 -> {
-		~drone = Pbind(
-			\instrument, \bpfsaw,
-			\dur, 1,
-			\freq, 26.midicps,
-			\detune, Pwhite(0.03,0.2, 10),
-			\rqmin, 0.08,
-			\rqmax, 0.12,
-			\cfmin, 50,
-			\cfmax, 400,
-			\atk, 2,
-			\sus, 0.1,
-			\rel, 2,
-			\amp, 0.5,
-			\group, ~mainGrp,
-			\out, ~bus[\reverb],
+
+	e.add(\basetenarp -> {
+		1.do{
+			~baseTenArp = Pbind(
+				\type, \note,
+				\instrument, \sine,
+				\dur, Pwhite(0.5, 1.25, inf),
+				\freq, Pseq([20, 40.0, 60.0, 80.0, 100.0, 120.0, 140.0, 160.0, 180.0, 200.0, 220.0, 240.0, 260.0, 280.0, 300.0, 320.0, 340.0, 360.0, 380.0, 400.0, 420.0, 440.0, 460.0, 480.0, 500.0, 520.0, 540.0, 560.0, 580.0, 600.0], 3),
+				\atk, Pwhite(2.0, 3.0, inf),
+				\rel, Pwhite(5.0, 10.0, inf),
+				\amp, Pseq([1, 0.5, 0.3333333333333333, 0.25, 0.2, 0.16666666666666666, 0.14285714285714285, 0.125, 0.1111111111111111, 0.1, 0.09090909090909091, 0.08333333333333333, 0.07692307692307693, 0.07142857142857142, 0.06666666666666667, 0.0625, 0.058823529411764705, 0.05555555555555555, 0.05263157894736842, 0.05, 0.047619047619047616, 0.045454545454545456, 0.043478260869565216, 0.041666666666666664, 0.04, 0.038461538461538464, 0.037037037037037035, 0.03571428571428571, 0.034482758620689655, 0.03333333333333333], 3),
+				\pan, Pwhite(-0.8, 0.8, inf),
+				\out, ~bus[\reverb],
+				\group, ~mainGrp,
 		).play;
-	});
-
-	e.add(\event2 -> {
-		Routine({
-			~birdsCloud = Pbind(
-				\instrument, \bpfbuf,
-				\dur, Pexprand(0.2,2, 10),
-				\atk, Pexprand(0.5,2),
-				\rel, Pexprand(2,6),
-				\buf, b[\birds][0],
-				\rate, Pwhite(-7.5,-5.5).midiratio,
-				\spos, Pwhite(5000,80000),
-				\amp, Pexprand(2,5),
-				\bpfmix, 0,
-				\group, ~mainGrp,
-				\out, ~bus[\reverb],
-			).play;
-
-			~bubbles = Pbind(
-				\instrument, \bpfsaw,
-				\dur, Pwhite(0.1,0.5, 10),
-				\freq, Pexprand(1,25),
-				\detune, Pwhite(0.03, 0.2, inf),
-				\rqmin, 0.1,
-				\rqmax, 0.5,
-				\cfmin, 50,
-				\cfmax, 2000,
-				\atk, 2,
-				\sus, 0,
-				\rel, Pexprand(3,8),
-				\pan, Pwhite(-0.9,0.9),
-				\amp, Pexprand(0.05,0.1),
-				\group, ~mainGrp,
-				\out, ~bus[\reverb],
-			).play;
-		}).play(AppClock);
+		};
 	});
 
 	e.add(\event3 -> {
