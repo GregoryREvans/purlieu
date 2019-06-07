@@ -3,25 +3,45 @@
 	e = Dictionary.new;
 
 	e.add(\openingbirds -> {
-		~openingBirds = Pbind(
-			\instrument, \bufnoise,
-			\dur, Pxrand([Pwhite(5, 8), Pwhite(4, 7), Pwhite(3, 6), Pwhite(2, 5), Pwhite(1, 4), Pwhite(0.5, 3.5), Pwhite(0.25, 3.25), Pwhite(0.125, 3.125)], 10),
-			\atk, Pseq([0.005, 0.005, 0.05, 0.07, 0.2, 0.09, 0.15, 0.7, 1.5, 1 ]),
-			\sus, Pwhite(0.05, 1),
-			\rel, Pwhite(0.05, 1),
-			\buf, Pseq([b[\birds][0].bufnum, b[\birds][1].bufnum, b[\birds][2].bufnum, b[\birds][3].bufnum, b[\birds][4].bufnum, b[\birds][5].bufnum, b[\birds][6].bufnum, b[\birds][7].bufnum, b[\birds][8].bufnum, b[\birds][9].bufnum, b[\birds][10].bufnum,]),
-			\rate, Pwhite(-7.0,-4.0).midiratio,
-			\spos, Pseq([]),
-			\amp, Pexprand(0.17,0.25),
-			\freq, Pseq([200, 1, 50, 20, 30, 25]),
-			\start, Pseq([]),
-			\end, Pseq([]),
-			\group, ~mainGrp,
-			\out, ~bus[\reverb],
-		).play;
+		1.do{
+			~openingBirds = Pbind(
+				\instrument, \bufnoise,
+				\dur, Pwhite(1, 3, 25),
+				\amp, Pwhite(0.125, 0.5, 25),
+				\buf, Pseq([b[\birds][0].bufnum, b[\birds][1].bufnum, b[\birds][2].bufnum, b[\birds][3].bufnum, ], 25),
+				\start, 0,
+				\end, Pseq([b[\birds][0].numFrames - 2, b[\birds][1].numFrames - 2, b[\birds][2].numFrames - 2, b[\birds][3].numFrames - 2, ], 25),
+				\freq, Pwhite(1, 8, 25),
+				\atk, Pwhite(1, 3, 25),
+				\sus, Pwhite(1, 3, 25),
+				\rel, Pwhite(1, 3, 25),
+				\c1, 1,
+				\c2, (-1),
+				\out, ~bus[\reverb],
+				\group, ~mainGrp,
+			).play;
+		}
 	});
 
-	e.add(\event1 -> {
+	e.add(\openinggrains -> {
+		1.do{
+			~openingGrains = Pbind(
+				\instrument, \fm,
+				\dur, Pseq([7.5, 6.4, 4.2, 3.1, 5.3, 0.3, 2.5, 1.4], 1),
+				\carHz, Pexprand(20, 10000),
+				\modHz, Pexprand(20, 10000),
+				\modAmp, Pwhite(0, 10000),
+				\amp, Pexprand(0.1, 0.25),
+				\atk, Pexprand(0.001, 0.1),
+				\rel, Pexprand(0.001, 0.1),
+				\pan, Pwhite(-1.0, 1.0),
+				\out, ~bus[\reverb],
+				\group, ~mainGrp,
+			).play;
+		}
+	});
+
+	/*e.add(\event1 -> {
 		~birdsSustain = Pbind(
 			\instrument, \bpfbuf,
 			\dur, Pwhite(0.2,0.7),
@@ -54,9 +74,9 @@
 			\group, ~mainGrp,
 			\out, ~bus[\reverb],
 		).play;
-	});
+	});*/
 
-	e.add(\event2 -> {
+	/*e.add(\event2 -> {
 		Routine({
 			~birdsCloud = Pbind(
 				\instrument, \bpfbuf,
@@ -253,6 +273,6 @@
 				~mainGrp
 			);
 		};
-	});
+	});*/
 };
 )

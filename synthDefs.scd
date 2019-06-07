@@ -38,16 +38,28 @@ SynthDef(\bufnoise, {
 	freq=1, atk=0, sus=0, rel=3, c1=1, c2=(-1);
 	var sig, ptr, env;
 	env = EnvGen.kr(Env([0,1,1,0],[atk,sus,rel],[c1,0,c2]),doneAction:2);
-	ptr = LFNoise1.ar(freq).range(start, end);
+	ptr = LFNoise1.ar({freq}!2).range(start, end);
 	sig = BufRd.ar(1, buf, ptr);
 	sig = sig * env;
-	sig = sig * amp;
+	sig = Pan2.ar(sig, 0, amp);
 	Out.ar(out, sig);
 }).add;
 
+SynthDef.new(\fm, {
+		arg carHz=500, modHz=100, modAmp=200, out=0,
+		atk=0.01, rel=1, amp=0.2, pan=0;
+		var car, mod, env;
+		env = EnvGen.kr(Env.perc(atk, rel), doneAction:2);
+		mod = SinOsc.ar(modHz, mul:modAmp);
+		car = SinOsc.ar(carHz + mod) * env * amp;
+		car = Pan2.ar(car, pan);
+		Out.ar(out, car);
+	}
+).add;
+
 SynthDef(\reverb, {
-	arg in, predelay=0.1, revtime=1.8,
-	lpf=4500, mix=0.15, amp=1, out=0;
+	arg in, predelay=0.1, revtime=2.1,
+	lpf=4500, mix=0.2, amp=1, out=0;
 	var dry, wet, temp, sig;
 	dry = In.ar(in,2);
 	temp = In.ar(in,2);

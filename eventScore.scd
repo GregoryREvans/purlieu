@@ -1,10 +1,12 @@
 (
+e[\openinggrains].play;
+30.wait;
 e[\openingbirds].play;
 /*e[\oneshot1].play;
 4.wait;
 e[\oneshot2].play;
 4.wait;
 e[\oneshot3].play;*/
-15.wait;
+60.wait;
 s.quit;
 )
