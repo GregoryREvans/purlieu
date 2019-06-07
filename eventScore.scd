@@ -16,8 +16,8 @@ s.sync;
 e[\birdnoise].set(\freq, Pwhite(1, 20, 25));
 s.sync;
 e[\birdnoise].set(\out, ~bus[\reverb]);
-57.wait;
-e[\birdchord].play;
+/*57.wait;
+e[\birdchord].play;*/
 60.wait;
 s.quit;
 )
