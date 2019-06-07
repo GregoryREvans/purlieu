@@ -69,6 +69,25 @@ SynthDef.new(\fm, {
 	}
 ).add;
 
+SynthDef(\bufgrains, {
+	arg trigger = 0, graindur = 0.2, sndbuf,
+	transp = 1, pos = 0, pan = 0, envbuf = -1, amp = 1, atk=1, rel=1;
+	var env, snd;
+	env = EnvGen.kr(Env([0,1,0],[atk,rel],[1,(-1)]),doneAction:2);
+	snd = GrainBuf.ar(
+		numChannels: 2,
+		trigger: LFBrownNoise0.kr(trigger),
+		dur: Line.kr(0.1, graindur),
+		sndbuf: sndbuf,
+		rate: transp,
+		pos: pos,
+		pan: pan,
+		envbufnum: envbuf);
+	snd = snd * env;
+	snd = snd * amp;
+	Out.ar(0, snd);
+}).add;
+
 SynthDef(\reverb, {
 	arg in, predelay=0.1, revtime=2.1,
 	lpf=4500, mix=0.2, amp=1, out=0;

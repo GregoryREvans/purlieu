@@ -12,3 +12,4 @@
 
 	}).play(AppClock);
 )
+s.quit;
