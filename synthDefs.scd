@@ -45,6 +45,18 @@ SynthDef(\bufnoise, {
 	Out.ar(out, sig);
 }).add;
 
+SynthDef.new(\sine,
+	{
+		arg freq=440, atk=0.005, rel=0.3, amp=1, pan=0;
+		var sig, env;
+		sig = SinOsc.ar(freq);
+		env = EnvGen.kr(Env.new([0, 1, 0], [atk, rel], [1, -1]), doneAction:2);
+		sig = Pan2.ar(sig, pan, amp);
+		sig = sig * env;
+		Out.ar(0, sig);
+	}
+).add;
+
 SynthDef.new(\fm, {
 		arg carHz=500, modHz=100, modAmp=200, out=0,
 		atk=0.01, rel=1, amp=0.2, pan=0;
@@ -71,6 +83,23 @@ SynthDef(\reverb, {
 		wet = wet + temp;
 	};
 	sig = XFade2.ar(dry, wet, mix*2-1, amp);
+	Out.ar(out, sig);
+}).add;
+
+SynthDef(\growingReverb, {
+	arg in, predelay=0.1, revtime=2.1,
+	lpf=4500, mix=0.4, amp=1, out=0;
+	var dry, wet, temp, sig;
+	dry = In.ar(in,2);
+	temp = In.ar(in,2);
+	wet = 0;
+	temp = DelayN.ar(temp, 0,2, predelay);
+	16.do{
+		temp = AllpassN.ar(temp, 0.05, {Rand(0.001,0.05)}!2, Line.kr(0, revtime, 60));
+		temp = LPF.ar(temp, lpf);
+		wet = wet + temp;
+	};
+	sig = XFade2.ar(dry, wet, Line.kr(0.1, mix, 60)*2-1, amp);
 	Out.ar(out, sig);
 }).add;
 )
