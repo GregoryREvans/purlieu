@@ -131,18 +131,18 @@
 
 			1.wait;
 
-			1.do{
+			(1..5).choose.do{
 				~birdNoise1 = Pbind(
 					\instrument, \bufnoise,
-					\dur, Pwhite(1, 3, 3),
-					\amp, Pwhite(0.125, 0.5, 3),
-					\buf, Pseq([b[\birds][12].bufnum, b[\birds][13].bufnum, b[\birds][14].bufnum, b[\birds][15].bufnum, ], 3),
+					\dur, Pwhite(1, 3, 2),
+					\amp, Pwhite(0.125, 0.5, 2),
+					\buf, Pseq([b[\birds][12].bufnum, b[\birds][13].bufnum, b[\birds][14].bufnum, b[\birds][15].bufnum, ], 2),
 					\start, 0,
-					\end, Pseq([b[\birds][12].numFrames - 2, b[\birds][13].numFrames - 2, b[\birds][14].numFrames - 2, b[\birds][15].numFrames - 2, ], 3),
-					\freq, Pwhite(1, 8, 3),
-					\atk, Pwhite(0.3, 0.7, 3),
-					\sus, Pwhite(0.3, 0.7, 3),
-					\rel, Pwhite(0.3, 0.7, 3),
+					\end, Pseq([b[\birds][12].numFrames - 2, b[\birds][13].numFrames - 2, b[\birds][14].numFrames - 2, b[\birds][15].numFrames - 2, ], 2),
+					\freq, Pwhite(1, 8, 2),
+					\atk, Pwhite(0.3, 0.7, 2),
+					\sus, Pwhite(0.3, 0.7, 2),
+					\rel, Pwhite(0.3, 0.7, 2),
 					\c1, 1,
 					\c2, (-1),
 					\out, ~bus[\reverb],
@@ -156,9 +156,9 @@
 				Synth(
 					\bpfsaw,
 					[
-						\atk, exprand(0.5, 0.9),
-						\sus, exprand(0.7, 1.2),
-						\rel, exprand(2.2, 4.2),
+						\atk, exprand(0.7, 1.2),
+						\sus, exprand(0.8, 1.3),
+						\rel, exprand(3.3, 5.3),
 						\c1, exprand(4, 10.0),
 						\c2, exprand(2.0,5).neg,
 						\freq, [88.0, 110.0, 132.0, 154.00000000000003, 176.0, 198.0, 220.0, 242.00000000000003, 264.0, 286.0].choose,
@@ -177,25 +177,89 @@
 
 			s.sync;
 
-			1.do{
+			(1..8).choose.do{
 				~birdNoise2 = Pbind(
 					\instrument, \bufnoise,
-					\dur, Pwhite(1, 3, 5),
-					\amp, Pwhite(0.125, 0.5, 5),
-					\buf, Pseq([b[\birds][12].bufnum, b[\birds][13].bufnum, b[\birds][14].bufnum, b[\birds][15].bufnum, ], 5),
+					\dur, Pwhite(1, 3, 3),
+					\amp, Pwhite(0.125, 0.5, 3),
+					\buf, Pseq([b[\birds][12].bufnum, b[\birds][13].bufnum, b[\birds][14].bufnum, b[\birds][15].bufnum, ], 3),
 					\start, 0,
-					\end, Pseq([b[\birds][12].numFrames - 2, b[\birds][13].numFrames - 2, b[\birds][14].numFrames - 2, b[\birds][15].numFrames - 2, ], 5),
-					\freq, Pwhite(1, 8, 5),
-					\atk, Pwhite(0.3, 0.7, 5),
-					\sus, Pwhite(0.3, 0.7, 5),
-					\rel, Pwhite(0.3, 0.7, 5),
+					\end, Pseq([b[\birds][12].numFrames - 2, b[\birds][13].numFrames - 2, b[\birds][14].numFrames - 2, b[\birds][15].numFrames - 2, ], 3),
+					\freq, Pwhite(1, 8, 3),
+					\atk, Pwhite(0.3, 0.7, 3),
+					\sus, Pwhite(0.3, 0.7, 3),
+					\rel, Pwhite(0.3, 0.7, 3),
 					\c1, 1,
 					\c2, (-1),
 					\out, ~bus[\reverb],
 					\group, ~mainGrp,
 				).play;
 			};
+
+			10.wait;
+
+			10.do{
+				Synth(
+					\bpfsaw,
+					[
+						\atk, exprand(0.7, 1.2),
+						\sus, exprand(0.8, 1.3),
+						\rel, exprand(3.3, 5.3),
+						\c1, exprand(4, 10.0),
+						\c2, exprand(2.0,5).neg,
+						\freq, [88.0, 110.0, 132.0, 154.00000000000003, 176.0, 198.0, 220.0, 242.00000000000003, 264.0, 286.0].choose,
+						\detune, rrand(0.05, 0.7),
+						\cfmin, 40,
+						\cfmax, 300,
+						\rqmin, 0.03,
+						\rqmax, 0.07,
+						\amp, exprand(0.5,0.7),
+						\pan, rrand(-1, 1),
+						\out, ~bus[\reverb],
+					],
+					~mainGrp
+				);
+			};
+
+			s.sync;
+
+			(3..8).choose.do{
+				~birdNoise3 = Pbind(
+					\instrument, \bufnoise,
+					\dur, Pwhite(1, 3, 3),
+					\amp, Pwhite(0.125, 0.5, 3),
+					\buf, Pseq([b[\birds][12].bufnum, b[\birds][13].bufnum, b[\birds][14].bufnum, b[\birds][15].bufnum, ], 3),
+					\start, 0,
+					\end, Pseq([b[\birds][12].numFrames - 2, b[\birds][13].numFrames - 2, b[\birds][14].numFrames - 2, b[\birds][15].numFrames - 2, ], 3),
+					\freq, Pwhite(1, 8, 3),
+					\atk, Pwhite(0.3, 0.7, 3),
+					\sus, Pwhite(0.3, 0.7, 3),
+					\rel, Pwhite(0.3, 0.7, 3),
+					\c1, 1,
+					\c2, (-1),
+					\out, ~bus[\reverb],
+					\group, ~mainGrp,
+				).play;
+		};
+
 		}).play(AppClock);
+	});
+
+	e.add(\baseelevensinegrains -> {
+		2.do{
+			~baseElevenSineGrains = Pbind(
+				\type, \note,
+				\instrument, \sine,
+				\dur, Pwhite(0.05, 0.09, (500..600).choose),
+				\freq, Pxrand([20, 44.0, 66.0, 88.0, 110.0, 132.0, 154.00000000000003, 176.0, 198.0, 220.0, 242.00000000000003, 264.0, 286.0, 308.00000000000006, 330.0, 352.0, 374.00000000000006, 396.0, 418.00000000000006, 440.0, 462.0, 484.00000000000006, 506.0, 528.0, 550.0000000000001, 572.0, 594.0, 616.0000000000001, 638.0, 660.0], (500..600).choose),
+				\atk, Pwhite(0.005, 0.1, (500..600).choose),
+				\rel, Pwhite(0.03, 0.3, (500..600).choose),
+				\amp, Pexprand(0.005, 0.1, (500..600).choose),
+				\pan, Pwhite(-0.8, 0.8, (500..600).choose),
+				\out, ~bus[\reverb],
+				\group, ~mainGrp,
+			).play;
+		};
 	});
 
 
