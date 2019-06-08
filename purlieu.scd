@@ -13,5 +13,6 @@
 	}).play(AppClock);
 )
 // for testing or emergency only
+// atom guide https://atom.io/packages/supercollider
 s.quit;
 s.plotTree;
