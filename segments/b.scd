@@ -2,11 +2,25 @@
 postln("B");
 e[\compoundrumble].play;
 
-9.wait;
+11.wait;
+
+e[\birddrones].play;
+
+7.wait;
+
+e[\birddrones].play;
+
+5.wait;
+
+e[\birddrones].play;
 
 e[\baseelevensinegrains].play;
 
-4.wait;
+3.wait;
+
+e[\birddrones].play;
+
+2.wait;
 
 e[\baseelevensinegrains].play;
 e[\baseelevensinegrains].set(\atk, Pwhite(0.05, 0.1, (500..600).choose));

@@ -1,9 +1,8 @@
 (
 s = Server.local;
 s.options.outDevice_(
-	"Built-in Output"
-	//"Soundflower (2ch)"
-	//"MOTU UltraLite mk3 Hybrid"
+	//"Built-in Output"
+	"Soundflower (2ch)"
 );
 s.options.numOutputBusChannels_(2);
 s.options.inDevice_("Built-in Microph");
