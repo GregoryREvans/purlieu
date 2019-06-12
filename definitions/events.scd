@@ -10,5 +10,7 @@
 
 	"events/segmentBEvents.scd".loadRelative;
 
+	"events/segmentCEvents.scd".loadRelative;
+
 };
 )
