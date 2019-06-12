@@ -20,7 +20,7 @@
 	~bus = Dictionary.new;
 	~bus.add(\reverb -> Bus.audio(s,2));
 	~bus.add(\growingReverb -> Bus.audio(s,2));
-	~bus.add(\oscilatingReverb -> Bus.audio(s,2));
+	~bus.add(\oscillatingReverb -> Bus.audio(s,2));
 };
 
 ~cleanup = {
@@ -71,7 +71,7 @@
 				\lpf, 4500,
 				\mix, 0.9,
 				\rate, 20,
-				\in, ~bus[\oscilatingReverb],
+				\in, ~bus[\oscillatingReverb],
 				\out, ~out,
 			],
 			~oscilatingReverbGrp

@@ -123,7 +123,7 @@ SynthDef(\growingReverb, {
 	Out.ar(out, sig);
 }).add;
 
-SynthDef(\oscilatingReverb, {
+SynthDef(\oscillatingReverb, {
 	arg in, predelay=0.1, revtime=2.1,
 	lpf=4500, mix=0.4, amp=1, out=0, rate=0.125;
 	var dry, wet, temp, sig;
