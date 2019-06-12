@@ -20,6 +20,7 @@
 	~bus = Dictionary.new;
 	~bus.add(\reverb -> Bus.audio(s,2));
 	~bus.add(\growingReverb -> Bus.audio(s,2));
+	~bus.add(\oscilatingReverb -> Bus.audio(s,2));
 };
 
 ~cleanup = {
@@ -34,6 +35,7 @@
 		~mainGrp = Group.new;
 		~reverbGrp = Group.after(~mainGrp);
 		~growingReverbGrp = Group.after(~mainGrp);
+		~oscilatingReverbGrp = Group.after(~mainGrp);
 		~reverbSynth = Synth.new(
 			\reverb,
 			[
@@ -59,6 +61,20 @@
 				\out, ~out,
 			],
 			~growingReverbGrp
+		);
+		~oscilatingReverbSynth = Synth.new(
+			\oscilatingReverb,
+			[
+				\amp, 1,
+				\predelay, 0.1,
+				\revtime, 7,
+				\lpf, 4500,
+				\mix, 0.9,
+				\rate, 20,
+				\in, ~bus[\oscilatingReverb],
+				\out, ~out,
+			],
+			~oscilatingReverbGrp
 		);
 	});
 };
