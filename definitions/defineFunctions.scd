@@ -35,7 +35,7 @@
 		~mainGrp = Group.new;
 		~reverbGrp = Group.after(~mainGrp);
 		~growingReverbGrp = Group.after(~mainGrp);
-		~oscilatingReverbGrp = Group.after(~mainGrp);
+		~oscillatingReverbGrp = Group.after(~mainGrp);
 		~reverbSynth = Synth.new(
 			\reverb,
 			[
@@ -62,8 +62,8 @@
 			],
 			~growingReverbGrp
 		);
-		~oscilatingReverbSynth = Synth.new(
-			\oscilatingReverb,
+		~oscillatingReverbSynth = Synth.new(
+			\oscillatingReverb,
 			[
 				\amp, 1,
 				\predelay, 0.1,
@@ -74,7 +74,7 @@
 				\in, ~bus[\oscillatingReverb],
 				\out, ~out,
 			],
-			~oscilatingReverbGrp
+			~oscillatingReverbGrp
 		);
 	});
 };
