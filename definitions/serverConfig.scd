@@ -4,6 +4,7 @@ s.options.outDevice_(
 	"Built-in Output"
 	// "Soundflower (2ch)"
 );
+// s.latency = 8; //issue of latency needs to be solved for Segment D...maybe change durations?
 s.options.numOutputBusChannels_(2);
 s.options.inDevice_("Built-in Microph");
 s.options.numInputBusChannels_(2);
