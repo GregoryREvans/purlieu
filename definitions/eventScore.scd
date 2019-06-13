@@ -8,9 +8,9 @@
 "/Users/evansdsg2/supercollider_scores/purlieu/segments/b.scd".load;
 75.wait;
 "/Users/evansdsg2/supercollider_scores/purlieu/segments/c.scd".load;
-69.wait;
+55.wait;
 "/Users/evansdsg2/supercollider_scores/purlieu/segments/d.scd".load;
-90.wait;
+60.wait;
 postln("Done");
 s.quit;
 )
