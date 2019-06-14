@@ -248,4 +248,30 @@ e.add(\basethirteenpattern8 -> {
 	}
 	});
 
+	e.add(\supsounds -> {
+		(4).do{
+			arg i;
+			~supSounds = Synth(
+				\bpfbuf,
+				[
+				\atk, 0.5,
+				\sus, 109,
+				\rel, 0.5,
+				\c1, 1,
+				\c2, (-1),
+				\buf, b[\supr][i],
+				\rate, 1,
+				\spos, 0,
+				\freq, [208.0, 416.0, 624.0, ].choose,
+				\rq, 1,
+				\bpfmix, [0, 0.25].choose,
+				\pan, [-1, -0.5, 0, 0.5, 1].choose,
+				\amp, 1,
+				\out, ~bus[\growingReverb],
+				],
+				~mainGrp,
+				);
+		};
+	});
+
 )

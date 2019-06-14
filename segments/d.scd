@@ -22,4 +22,8 @@ e[\basethirteenpattern7].play;
 
 e[\basethirteenpattern8].play;
 
+7.wait;
+
+e[\supsounds].play;
+
 )

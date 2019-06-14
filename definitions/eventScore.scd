@@ -10,7 +10,7 @@
 "/Users/evansdsg2/supercollider_scores/purlieu/segments/c.scd".load;
 50.wait;
 "/Users/evansdsg2/supercollider_scores/purlieu/segments/d.scd".load;
-35.wait;
+115.wait;
 postln("Done");
 s.quit;
 )
