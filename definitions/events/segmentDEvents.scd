@@ -2,7 +2,7 @@
 //OMCollider Patterns
 e.add(\basethirteenpattern1 -> {
 	1.do{
-		~basethirteenpattern1 = Pbind(
+		~baseThirteenPattern1 = Pbind(
 	        \instrument, \bpfsaw,
 	        \freq, Prand([20, 234.00000000000003, 442.0, 650.0, ], inf),
 	        \dur, Pseq(
@@ -33,7 +33,7 @@ e.add(\basethirteenpattern1 -> {
 
 e.add(\basethirteenpattern2 -> {
 	1.do{
-		~basethirteenpattern2 = Pbind(
+		~baseThirteenPattern2 = Pbind(
 	        \instrument, \bpfsaw,
 	        \freq, Prand([52.0, 260.0, 468.00000000000006, 676.0000000000001, ], inf),
 	        \dur, Pseq(
@@ -64,7 +64,7 @@ e.add(\basethirteenpattern2 -> {
 
 e.add(\basethirteenpattern3 -> {
 	1.do{
-		~basethirteenpattern3 = Pbind(
+		~baseThirteenPattern3 = Pbind(
 	        \instrument, \bpfsaw,
 	        \freq, Prand([78.0, 286.0, 494.0, 702.0, ], inf),
 	        \dur, Pseq(
@@ -95,7 +95,7 @@ e.add(\basethirteenpattern3 -> {
 
 e.add(\basethirteenpattern4 -> {
 	1.do{
-		~basethirteenpattern4 = Pbind(
+		~baseThirteenPattern4 = Pbind(
 	        \instrument, \bpfsaw,
 	        \freq, Prand([104.0, 312.0, 520.0, 728.0, ], inf),
 	        \dur, Pseq(
@@ -126,7 +126,7 @@ e.add(\basethirteenpattern4 -> {
 
 e.add(\basethirteenpattern5 -> {
 	1.do{
-		~basethirteenpattern5 = Pbind(
+		~baseThirteenPattern5 = Pbind(
 	        \instrument, \bpfsaw,
 	        \freq, Prand([130.0, 338.00000000000006, 546.0, 754.0, ], inf),
 	        \dur, Pseq(
@@ -157,7 +157,7 @@ e.add(\basethirteenpattern5 -> {
 
 e.add(\basethirteenpattern6 -> {
 	1.do{
-		~basethirteenpattern6 = Pbind(
+		~baseThirteenPattern6 = Pbind(
 	        \instrument, \bpfsaw,
 	        \freq, Prand([156.0, 364.0, 572.0, 780.0, ], inf),
 	        \dur, Pseq(
@@ -188,7 +188,7 @@ e.add(\basethirteenpattern6 -> {
 
 e.add(\basethirteenpattern7 -> {
 	1.do{
-		~basethirteenpattern7 = Pbind(
+		~baseThirteenPattern7 = Pbind(
 	        \instrument, \bpfsaw,
 	        \freq, Prand([182.0, 390.0, 598.0, ], inf),
 	        \dur, Pseq(
@@ -219,7 +219,7 @@ e.add(\basethirteenpattern7 -> {
 
 e.add(\basethirteenpattern8 -> {
 	1.do{
-		~basethirteenpattern8 = Pbind(
+		~baseThirteenPattern8 = Pbind(
 	        \instrument, \bpfsaw,
 	        \freq, Prand([208.0, 416.0, 624.0, ], inf ),
 	        \dur, Pseq(

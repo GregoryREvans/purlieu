@@ -14,5 +14,7 @@
 
 	"events/segmentDEvents.scd".loadRelative;
 
+	"events/segmentEEvents.scd".loadRelative;
+
 };
 )

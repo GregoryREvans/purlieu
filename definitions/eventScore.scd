@@ -11,6 +11,8 @@
 50.wait;
 "/Users/evansdsg2/supercollider_scores/purlieu/segments/d.scd".load;
 115.wait;
+"/Users/evansdsg2/supercollider_scores/purlieu/segments/e.scd".load;
+115.wait;
 postln("Done");
 s.quit;
 )
