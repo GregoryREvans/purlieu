@@ -1,8 +1,8 @@
 (
 s = Server.local;
 s.options.outDevice_(
-	"Built-in Output"
-	// "Soundflower (2ch)"
+	// "Built-in Output"
+	"Onyx Blackjack"
 );
 // s.latency = 8; //issue of latency needs to be solved for Segment D...maybe change durations?
 s.options.numOutputBusChannels_(2);

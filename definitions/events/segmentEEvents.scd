@@ -5,7 +5,7 @@
 e.add(\basefourteendrone -> {
 	8.do{
 		~baseFourteenAccel1 = Pbind(
-	        \instrument, \bpfsaw,
+	        \instrument, \bpfsquare,
 	        \freq, Pxrand(
 				[
 				20,
@@ -60,7 +60,7 @@ e.add(\basefourteendrone -> {
 e.add(\basefourteenaccel1 -> {
 	1.do{
 		~baseFourteenAccel1 = Pbind(
-	        \instrument, \bpfsaw,
+	        \instrument, \bpfsquare,
 	        \freq, 475.99999999999994,
 	        \dur, Pseq(
 	            [
@@ -101,7 +101,7 @@ e.add(\basefourteenaccel1 -> {
 e.add(\basefourteenaccel2 -> {
 	1.do{
 		~baseFourteenAccel2 = Pbind(
-	        \instrument, \bpfsaw,
+	        \instrument, \bpfsquare,
 	        \freq, 391.99999999999994,
 	        \dur, Pseq(
 	            [
@@ -142,7 +142,7 @@ e.add(\basefourteenaccel2 -> {
 e.add(\basefourteenaccel3 -> {
 	1.do{
 		~baseFourteenAccel3 = Pbind(
-	        \instrument, \bpfsaw,
+	        \instrument, \bpfsquare,
 	        \freq, [364.0, 504.0, ],
 	        \dur, Pseq(
 	            [
