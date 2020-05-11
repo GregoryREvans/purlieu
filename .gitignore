@@ -4,8 +4,6 @@ __pycache__/
 *$py.class
 
 *.txt
-*.wav
-*.aiff
 *.DS_Store
 
 # C extensions

@@ -29,7 +29,7 @@ e.add(\basetendrones -> {
 			\freq, Pxrand([20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300, 320, 340], (100..110).choose),
 			\atk, Pwhite(2.0, 3.0, (100..500).choose),
 			\rel, Pwhite(5.0, 10.0, (100..500).choose),
-			\amp, Pexprand(0.25, 0.5, (100..500).choose),
+			\amp, Pexprand(0.125, 0.25, (100..500).choose),
 			\pan, Pwhite(-0.8, 0.8, (100..500).choose),
 			\out, ~bus[\reverb],
 			\group, ~mainGrp,
